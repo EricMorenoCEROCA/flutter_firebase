@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase/components/boton_auth.dart';
 import 'package:flutter_firebase/components/textfield_auth.dart';
 
 class PaginaLogin extends StatefulWidget {
@@ -40,7 +41,15 @@ class _PaginaLoginState extends State<PaginaLogin> {
             color: Colors.white,
           ),
           TextFieldAuth(controller: controllerEmail, obscureText: false, hintText: "Email"),
+          SizedBox(height: 20,),
           TextFieldAuth(controller: controllerPassword, obscureText: false, hintText: "Password"),
+           const SizedBox(height: 10,),
+          const Row(
+            children:[
+              Text("Registrate"),
+            ]
+          ),
+          BotonAuth(texto: 'Login')
         ],
       ),
     );
