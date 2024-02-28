@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
 
 class BotonAuth extends StatelessWidget {
-  final String texto;
-  final Function()? onPressed;
+  final String text;
+  final Function()? onTap;
 
-  BotonAuth({required this.texto, this.onPressed});
+  const BotonAuth({
+    Key? key,
+    required this.text,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-        primary: Colors.blue, // Color de fondo del botón
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0), // Bordes redondeados
+    return GestureDetector(
+      onTap: null,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20), backgroundColor: Colors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
         ),
-      ),
-      child: Text(
-        texto,
-        style: TextStyle(
-          color: Colors.white, // Color del texto
-          fontSize: 16,
+        onPressed: () {},
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+          ),
         ),
       ),
     );
